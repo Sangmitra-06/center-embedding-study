@@ -8,13 +8,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware - Updated with your actual URLs
+// Middleware - Updated with your current Vercel URL
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://center-embedding-study-g8a8s9ecx-sangmitra06s-projects.vercel.app']
+    ? ['https://center-embedding-study-ou37zxl35-sangmitra06s-projects.vercel.app']
     : 'http://localhost:3000',
   credentials: true
 }));
-app.use(express.json());
 
 // Routes
 app.use('/api/study', studyRoutes);
