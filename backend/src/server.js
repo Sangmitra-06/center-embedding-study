@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware - CORS first
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://center-embedding-study-ou37zxl35-sangmitra06s-projects.vercel.app']
+    ? ['https://center-embedding-study.vercel.app/']
     : 'http://localhost:3000',
   credentials: true
 }));
