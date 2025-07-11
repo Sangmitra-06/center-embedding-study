@@ -223,7 +223,7 @@ export const studyData = [
   {
     complexityLevel: 5,
     sentenceId: "sentence_1_complexity_5",
-    sentence: "The goldfish that the cat that the toddler that the babysitter that the mother that the grandmother comforted supervised chased saw swam.",
+    sentence: "The goldfish that the cat that the toddler that the babysitter that the mother that the grandmother called comforted supervised chased saw swam.",
     questions: [
       {
         id: 1,
@@ -263,7 +263,7 @@ export const studyData = [
         difficulty: "hard",
         entity: "toddler",
         question: "What series of events led to the toddler's action? If no events exist, please answer with no prior events.",
-        correctAnswer: "the grandmother comforting the mother which led to the mother supervising the babysitter which led to the babysitter supervising the toddler"
+        correctAnswer: "the grandmother calling the mother which led to the mother comforting the babysitter which led to the babysitter supervising the toddler"
       },
       {
         id: 6,
