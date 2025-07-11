@@ -7,15 +7,18 @@ const studyRoutes = require('./routes/studyRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware - CORS first
+// Middleware - Update CORS with your new clean URL
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://center-embedding-study.vercel.app/']
+    ? [
+        'https://center-embedding-study.vercel.app',  // Your clean URL
+        'https://center-embedding-study-ou37zxl35-sangmitra06s-projects.vercel.app'  // Keep the old one just in case
+      ]
     : 'http://localhost:3000',
   credentials: true
 }));
 
-// Body parser middleware - ADD THESE LINES
+// Body parser middleware
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
