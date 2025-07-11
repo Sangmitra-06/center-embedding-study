@@ -3,8 +3,14 @@ const { v4: uuidv4 } = require('uuid');
 
 const createParticipant = async (req, res) => {
   try {
+    console.log('Creating participant...');
+    console.log('Request body:', req.body);
+    
     const participantId = uuidv4();
     const { demographics } = req.body;
+    
+    console.log('Generated participant ID:', participantId);
+    console.log('Demographics:', demographics);
     
     const query = `
       INSERT INTO participants (id, demographics, created_at)
@@ -12,15 +18,26 @@ const createParticipant = async (req, res) => {
       RETURNING id
     `;
     
+    console.log('Executing query:', query);
+    console.log('Query parameters:', [participantId, JSON.stringify(demographics || {})]);
+    
     const result = await pool.query(query, [participantId, JSON.stringify(demographics || {})]);
+    
+    console.log('Query result:', result.rows);
     
     res.json({ participantId: result.rows[0].id });
   } catch (error) {
     console.error('Error creating participant:', error);
-    res.status(500).json({ error: 'Failed to create participant' });
+    console.error('Error details:', {
+      message: error.message,
+      code: error.code,
+      detail: error.detail
+    });
+    res.status(500).json({ error: 'Failed to create participant', details: error.message });
   }
 };
 
+// Keep the rest of your functions the same...
 const saveResponse = async (req, res) => {
   try {
     const {
@@ -35,25 +52,18 @@ const saveResponse = async (req, res) => {
       responseTime
     } = req.body;
 
-    // Log what we received
-    console.log('Received response data:', {
+    console.log('Saving response:', {
       participantId,
       complexityLevel,
       sentenceId,
       questionId,
       questionType,
       answer,
-      questionStartTime,
-      questionEndTime,
-      responseTime,
-      responseTimeType: typeof responseTime
+      responseTime
     });
 
-    // Make sure responseTime is a valid number
     const responseTimeMs = responseTime != null ? Math.round(Number(responseTime)) : 0;
     
-    console.log('Processed responseTimeMs:', responseTimeMs);
-
     const query = `
       INSERT INTO responses (
         participant_id, complexity_level, sentence_id, question_id,
