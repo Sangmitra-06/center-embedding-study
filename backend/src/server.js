@@ -7,10 +7,10 @@ const studyRoutes = require('./routes/studyRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+// Middleware - Updated with your actual URLs
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-url.railway.app', 'https://your-frontend-url.vercel.app'] 
+    ? ['https://center-embedding-study-g8a8s9ecx-sangmitra06s-projects.vercel.app']
     : 'http://localhost:3000',
   credentials: true
 }));
