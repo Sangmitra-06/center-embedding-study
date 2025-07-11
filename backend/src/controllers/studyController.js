@@ -5,9 +5,12 @@ const createParticipant = async (req, res) => {
   try {
     console.log('Creating participant...');
     console.log('Request body:', req.body);
+    console.log('Request headers:', req.headers);
     
     const participantId = uuidv4();
-    const { demographics } = req.body;
+    
+    // Handle case where req.body might be undefined
+    const demographics = req.body ? req.body.demographics : {};
     
     console.log('Generated participant ID:', participantId);
     console.log('Demographics:', demographics);
