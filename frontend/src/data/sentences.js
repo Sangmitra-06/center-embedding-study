@@ -50,7 +50,7 @@ export const studyData = [
         type: "chain_consequence",
         difficulty: "hard",
         entity: "tuna",
-        question: "What is the consequence of the tuna's involvement? If the involvement does not result in any additional action chains, respond with 'the action sequence completes'.",
+        question: "What is the consequence of the tuna's involvement? If the involvement does not result in any additional effects, respond with 'none'.",
         correctAnswer: "the action sequence completes"
       }
     ]
