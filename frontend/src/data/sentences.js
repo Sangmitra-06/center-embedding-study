@@ -1,57 +1,57 @@
 // You can manually add your sentences and questions here
 export const studyData = [
   {
-    complexityLevel: 3,
-    sentenceId: "sentence_2_complexity_3",
-    sentence: "The skunk that the lion that the bat that the elephant sprayed at trumpeted at echolocated roared.",
+    complexityLevel: 4,
+    sentenceId: "sentence_2_complexity_4",
+    sentence: "The police officer that the teacher that the mailman that the nurse that the photographer handcuffed photographed bandaged delivered mail to lectured.",
     questions: [
       {
         id: 1,
         type: "action_performed",
         difficulty: "easy",
-        entity: "lion",
-        question: "What did the lion do?",
-        correctAnswer: "echolocate the skunk"
+        entity: "mailman",
+        question: "What did the mailman do?",
+        correctAnswer: "bandage the teacher"
       },
       {
         id: 2,
         type: "agent_identification",
         difficulty: "easy",
-        entity: "lion",
-        question: "What trumpeted at the lion?",
-        correctAnswer: "the bat"
+        entity: "mailman",
+        question: "Who photographed the mailman?",
+        correctAnswer: "the nurse"
       },
       {
         id: 3,
         type: "entity_count",
         difficulty: "medium",
-        entity: "lion",
+        entity: "mailman",
         question: "How many distinct entities are in the sentence?",
-        correctAnswer: "4"
+        correctAnswer: "5"
       },
       {
         id: 4,
         type: "nested_dependency",
         difficulty: "medium",
-        entity: "lion",
-        question: "What did the entity that was trumpeted at do?",
-        correctAnswer: "echolocated the skunk"
+        entity: "mailman",
+        question: "What did the entity that was photographed do?",
+        correctAnswer: "bandaged the teacher"
       },
       {
         id: 5,
         type: "causal_sequence",
         difficulty: "hard",
-        entity: "lion",
-        question: "What series of events led to the lion's action? If no events exist, please answer with no prior events.",
-        correctAnswer: "the elephant spraying at the bat which led to the bat trumpeting at the lion"
+        entity: "mailman",
+        question: "What series of events led to the mailman's action? If no events exist, please answer with no prior events.",
+        correctAnswer: "the photographer handcuffing the nurse which led to the nurse photographing the mailman"
       },
       {
         id: 6,
         type: "chain_consequence",
         difficulty: "hard",
-        entity: "lion",
-        question: "What is the consequence of the lion's involvement? If the involvement does not result in any additional effects, respond with 'none'.",
-        correctAnswer: "the skunk roared"
+        entity: "mailman",
+        question: "What is the consequence of the mailman's involvement? If the involvement does not result in any additional effects, respond with 'none'.",
+        correctAnswer: "the teacher delivered mail to the police officer"
       }
     ]
   }
